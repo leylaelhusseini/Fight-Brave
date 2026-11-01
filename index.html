@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>FightBrave</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-screen="select">
+
+    <section id="select" class="screen">
+        <header class="topbar">
+            <div class="brand">FightBrave<span>·</span></div>
+            <p class="muted">Teacher Hazar is the strongest 🙌</p>
+        </header>
+
+        <main class="select-main">
+            <h1>Choose your <span>fighter.</span></h1>
+            <p class="muted">You fight everybody else, from the weakest to the strongest. Fanso and Leyla always fight together. Every win makes you bigger!</p>
+            <div id="modes" class="chips" hidden>
+                <button class="chip" data-mode="single">One by one</button>
+                <button class="chip" data-mode="group">Group by group</button>
+            </div>
+            <div id="cards" class="cards"></div>
+        </main>
+
+        <footer class="startbar">
+            <p id="status" class="muted"></p>
+            <button id="start" class="btn">Start fight →</button>
+        </footer>
+    </section>
+
+    <section id="arena" class="screen">
+        <canvas id="game"></canvas>
+
+        <header class="hud">
+            <div id="myTeam" class="team"></div>
+
+            <div class="middle">
+                <span id="round"></span>
+                <button id="menuBtn" class="btn ghost small">Menu</button>
+            </div>
+
+            <div id="foeTeam" class="team right"></div>
+        </header>
+
+        <p id="banner" class="banner"></p>
+
+        <div class="pad">
+            <div class="move">
+                <button id="leftBtn" class="btn ghost">◀</button>
+                <button id="rightBtn" class="btn ghost">▶</button>
+            </div>
+            <div class="hit">
+                <button id="punchBtn" class="btn">Punch</button>
+                <button id="kickBtn" class="btn">Kick</button>
+            </div>
+        </div>
+
+        <div id="result" class="result" hidden>
+            <div class="dialog">
+                <h2 id="resultTitle"></h2>
+                <p id="resultText" class="muted"></p>
+                <button id="again" class="btn">Play again</button>
+                <button id="back" class="btn ghost">Back to menu</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
